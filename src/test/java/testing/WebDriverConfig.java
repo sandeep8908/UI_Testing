@@ -22,7 +22,7 @@ public class WebDriverConfig {
     public void tearDown() {
         System.out.println("After suit completed..");
         if (driver != null) {
-            /*driver.close();
+           /* driver.close();
             driver.quit();*/
         }
     }
