@@ -1,4 +1,4 @@
-package testing;
+package testing.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import testing.BaseClass;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -20,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.*;
 
 
-public class UiTest extends WebDriverConfig {
+public class UiTest extends BaseClass {
     private String baseUrl = "https://www.facebook.com/";
 
     @Test
@@ -187,10 +188,6 @@ public class UiTest extends WebDriverConfig {
             }
         }
     }
-
-    /*@FindBy(id = "login")
-    WebElement webElement;
-    webElement.click();*/
 
     @Test
     void navigationTest() {
