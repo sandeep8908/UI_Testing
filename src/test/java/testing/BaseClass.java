@@ -15,6 +15,7 @@ public class BaseClass {
         System.out.println("Before Suit Running...");
         //System.setProperty("webdriver.chrome.driver", "C:\\Users\\ssb\\Downloads\\chromedriver.exe");
         WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

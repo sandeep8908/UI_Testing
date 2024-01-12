@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d18db684-3194-46d8-a3af-879ecf34fc86" name="Changes" comment="add assert for test and handle multiple tab and generate allure report">
-      <change afterPath="$PROJECT_DIR$/src/test/java/testing/page/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testing/page/SignInPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testing/page/UploadPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testing/test/SignInPageTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testing/UiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/UiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testing/WebDriverConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +55,7 @@
       <recent name="testing" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UploadAndDownloadTest.uploadTest">
+  <component name="RunManager" selected="TestNG.UploadAndDownloadTest.downloadTest">
     <configuration name="C:/Users/ssb/Downloads/UI_Testing/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UI_Testing" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -72,34 +66,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignInPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UploadAndDownloadTest.NestedIframeTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UI_Testing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testing.page.*" />
+          <option name="PATTERN" value="testing.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testing" />
-      <option name="MAIN_CLASS_NAME" value="testing.test.SignInPageTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.UploadAndDownloadTest" />
+      <option name="METHOD_NAME" value="NestedIframeTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UiTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="UploadAndDownloadTest.downloadTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UI_Testing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testing.page.*" />
+          <option name="PATTERN" value="testing.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testing" />
-      <option name="MAIN_CLASS_NAME" value="testing.test.UiTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.UploadAndDownloadTest" />
+      <option name="METHOD_NAME" value="downloadTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UploadAndDownloadTest.iFrameClickTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UI_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testing.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.UploadAndDownloadTest" />
+      <option name="METHOD_NAME" value="iFrameClickTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -124,29 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testing.test" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UI_Testing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testing.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testing.test" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.UploadAndDownloadTest.downloadTest" />
+        <item itemvalue="TestNG.UploadAndDownloadTest.NestedIframeTest" />
+        <item itemvalue="TestNG.UploadAndDownloadTest.iFrameClickTest" />
         <item itemvalue="TestNG.UploadAndDownloadTest.uploadTest" />
         <item itemvalue="TestNG.C:/Users/ssb/Downloads/UI_Testing/testng.xml" />
-        <item itemvalue="TestNG.testing.test" />
-        <item itemvalue="TestNG.SignInPageTest" />
-        <item itemvalue="TestNG.UiTest" />
       </list>
     </recent_temporary>
   </component>

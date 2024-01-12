@@ -1,8 +1,14 @@
 package testing.test;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import testing.BaseClass;
 import testing.page.UploadPage;
+
+import java.io.File;
+
+import static org.testng.Assert.assertTrue;
 
 public class UploadAndDownloadTest extends BaseClass {
     @Test
@@ -16,8 +22,40 @@ public class UploadAndDownloadTest extends BaseClass {
         uploadPage.clickOnSubmitButton();
 
     }
-    @Test
-    public void downloadTest(){
 
+    @Test
+    public void downloadTest() throws InterruptedException {
+        String downlaodDir = "C:\\Users\\ssb\\Downloads";
+        driver.get("https://the-internet.herokuapp.com/download");
+        String fileName = "boat.jpg";
+        WebElement downlaodLink = driver.findElement(By.linkText(fileName));
+        downlaodLink.click();
+
+        Thread.sleep(5000);
+
+        String filePath = downlaodDir + File.separator + fileName;
+        File downloadFile = new File(filePath);
+
+        assertTrue(downloadFile.exists(),"File Download Successfully");
+    }
+
+    @Test
+    public void iFrameClickTest() {
+        driver.get("https://demo.automationtesting.in/Frames.html");
+        driver.switchTo().frame(0);
+
+        driver.findElement(By.cssSelector("input[type = 'text']")).sendKeys("abcdef");
+    }
+
+    @Test
+    public void NestedIframeTest() {
+        driver.get("https://demo.automationtesting.in/Frames.html");
+
+
+        driver.findElement(By.linkText("Iframe with in an Iframe")).click();
+        driver.switchTo().frame(0);
+
+        WebElement element = driver.findElement(By.xpath("/html/body/section/div/div/div/input"));
+        driver.findElement(By.cssSelector("input[type = 'text']")).sendKeys("fdsfd");
     }
 }
