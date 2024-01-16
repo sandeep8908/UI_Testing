@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d18db684-3194-46d8-a3af-879ecf34fc86" name="Changes" comment="add assert for test and handle multiple tab and generate allure report">
+    <list default="true" id="d18db684-3194-46d8-a3af-879ecf34fc86" name="Changes" comment="create test case for upload and download file and click on iframe">
+      <change afterPath="$PROJECT_DIR$/browserstack.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/reportportal.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/UiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/UiTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,28 +41,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ssb/Downloads/UI_Testing&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ssb/Downloads/UI_Testing/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "BROWSERSTACK_PLUGIN_ENABLED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/ssb/Downloads/UI_Testing",
+    "onboarding.tips.debug.path": "C:/Users/ssb/Downloads/UI_Testing/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="testing" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.UploadAndDownloadTest.downloadTest">
-    <configuration name="C:/Users/ssb/Downloads/UI_Testing/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.UploadAndDownloadTest.NestedIframeTest">
+    <configuration name="SignInPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UI_Testing" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testing.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.SignInPageTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UiTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UI_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testing.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.UiTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UploadAndDownloadTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UI_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testing.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.UploadAndDownloadTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -102,49 +148,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UploadAndDownloadTest.iFrameClickTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UI_Testing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testing.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testing.test" />
-      <option name="MAIN_CLASS_NAME" value="testing.test.UploadAndDownloadTest" />
-      <option name="METHOD_NAME" value="iFrameClickTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UploadAndDownloadTest.uploadTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UI_Testing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testing.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testing.test" />
-      <option name="MAIN_CLASS_NAME" value="testing.test.UploadAndDownloadTest" />
-      <option name="METHOD_NAME" value="uploadTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.UploadAndDownloadTest.downloadTest" />
         <item itemvalue="TestNG.UploadAndDownloadTest.NestedIframeTest" />
-        <item itemvalue="TestNG.UploadAndDownloadTest.iFrameClickTest" />
-        <item itemvalue="TestNG.UploadAndDownloadTest.uploadTest" />
-        <item itemvalue="TestNG.C:/Users/ssb/Downloads/UI_Testing/testng.xml" />
+        <item itemvalue="TestNG.UploadAndDownloadTest.downloadTest" />
+        <item itemvalue="TestNG.UploadAndDownloadTest" />
+        <item itemvalue="TestNG.UiTest" />
+        <item itemvalue="TestNG.SignInPageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -171,12 +181,20 @@
       <option name="project" value="LOCAL" />
       <updated>1704923523901</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="create test case for upload and download file and click on iframe">
+      <created>1705092766965</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705092766965</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create ui-testing of login and signup page" />
     <MESSAGE value="add assert for test and handle multiple tab and generate allure report" />
-    <option name="LAST_COMMIT_MESSAGE" value="add assert for test and handle multiple tab and generate allure report" />
+    <MESSAGE value="create test case for upload and download file and click on iframe" />
+    <option name="LAST_COMMIT_MESSAGE" value="create test case for upload and download file and click on iframe" />
   </component>
 </project>

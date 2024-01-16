@@ -45,7 +45,7 @@ public class UiTest extends BaseClass {
         driver.get(baseUrl);
         WebElement createAccount = driver.findElement(By.partialLinkText("Create new account"));
         createAccount.click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.of(20, TimeUnit.SECONDS.toChronoUnit()));
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstname")));
 
         WebElement firstname = driver.findElement(By.name("firstname"));
@@ -200,7 +200,7 @@ public class UiTest extends BaseClass {
         //driver.manage().timeouts().implicitlyWait(30000, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.MINUTES);
         //Thread.sleep(30000);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.of(10000, TimeUnit.SECONDS.toChronoUnit()));
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(1000));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APjFqb")));
         //WebElement element = driver.findElement(By.id("APjFqb"));
 
