@@ -2,6 +2,7 @@ package testing.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import testing.BaseClass;
@@ -14,6 +15,7 @@ import static org.testng.Assert.assertTrue;
 public class UploadAndDownloadTest extends BaseClass {
     @Test
     public void uploadTest() {
+        WebDriver driver = getDriver();
         UploadPage uploadPage = new UploadPage(driver);
 
         uploadPage.uploadFile();
@@ -26,9 +28,10 @@ public class UploadAndDownloadTest extends BaseClass {
 
     @Test
     public void downloadTest() throws InterruptedException {
+        WebDriver driver = getDriver();
         String downlaodDir = "C:\\Users\\ssb\\Downloads";
         driver.get("https://the-internet.herokuapp.com/download");
-        String fileName = "logo.jpg";
+        String fileName = "IMG_8955.JPG";
         WebElement downlaodLink = driver.findElement(By.linkText(fileName));
         downlaodLink.click();
 
@@ -42,6 +45,7 @@ public class UploadAndDownloadTest extends BaseClass {
 
     @Test
     public void iFrameClickTest() {
+        WebDriver driver = getDriver();
         driver.get("https://demo.automationtesting.in/Frames.html");
         driver.switchTo().frame(0);
 
@@ -51,6 +55,7 @@ public class UploadAndDownloadTest extends BaseClass {
 
     @Test
     public void NestedIframeTest() {
+        WebDriver driver = getDriver();
         driver.get("https://demo.automationtesting.in/Frames.html");
 
         driver.findElement(By.linkText("Iframe with in an Iframe")).click();

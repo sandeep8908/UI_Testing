@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d18db684-3194-46d8-a3af-879ecf34fc86" name="Changes" comment="configure browserstack.yml file &amp; adding dependencies in pom.xml of browserstack">
-      <change afterPath="$PROJECT_DIR$/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/services/org.testng.ITestNGListener" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/reportportal.properties" afterDir="false" />
+    <list default="true" id="d18db684-3194-46d8-a3af-879ecf34fc86" name="Changes" comment="configure report portal to generate report of test.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browserstack.yml" beforeDir="false" afterPath="$PROJECT_DIR$/browserstack.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/SignInPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/SignInPageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/UiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/UiTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
@@ -196,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705443164580</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="configure report portal to generate report of test.">
+      <created>1705676304946</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705676304946</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,6 +207,7 @@
     <MESSAGE value="add assert for test and handle multiple tab and generate allure report" />
     <MESSAGE value="create test case for upload and download file and click on iframe" />
     <MESSAGE value="configure browserstack.yml file &amp; adding dependencies in pom.xml of browserstack" />
-    <option name="LAST_COMMIT_MESSAGE" value="configure browserstack.yml file &amp; adding dependencies in pom.xml of browserstack" />
+    <MESSAGE value="configure report portal to generate report of test." />
+    <option name="LAST_COMMIT_MESSAGE" value="configure report portal to generate report of test." />
   </component>
 </project>

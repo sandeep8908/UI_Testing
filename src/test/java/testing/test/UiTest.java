@@ -1,9 +1,6 @@
 package testing.test;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,6 +21,7 @@ public class UiTest extends BaseClass {
 
     @Test
     void testLoginPage() {
+        WebDriver driver = getDriver();
         driver.get(baseUrl);
         WebElement email = driver.findElement(By.id("email"));
         email.sendKeys("rythum30@gmail.com");
@@ -41,6 +39,7 @@ public class UiTest extends BaseClass {
 
     @Test
     void signUpTest() throws InterruptedException {
+        WebDriver driver = getDriver();
         driver.get(baseUrl);
         WebElement createAccount = driver.findElement(By.partialLinkText("Create new account"));
         //driver.switchTo().alert().accept();
@@ -109,6 +108,7 @@ public class UiTest extends BaseClass {
 
     @Test
     void amazonSignUpPageTest() {
+        WebDriver driver = getDriver();
         driver.navigate().to("https://www.amazon.in/ap/register?showRememberMe=true&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%" +
                 "2Fs%3Fk%3Damaozn%2Bpay%26adgrpid%3D84811993817%26ext_vrnc%3Dhi%26gclid%3DCj0KCQiAnfmsBhDfARIsAM7MKi1KMSYKMCMu10BxvFtJEssopaKiphkDvV_" +
                 "CPiBPYu5m9DLUe14ihLMaAl3pEALw_wcB%26hvadid%3D590431616040%26hvdev%3Dc%26hvlocphy%3D1007796%26hvnetw%3Dg%26hvqmt%3Db" +
@@ -145,7 +145,8 @@ public class UiTest extends BaseClass {
     }
 
     @Test
-    void testHandlingTabs() throws AWTException {
+    void testHandlingTabs() {
+        WebDriver driver = getDriver();
         String currentWindowHandle = driver.getWindowHandle();
         System.out.println(currentWindowHandle);
 
@@ -162,6 +163,7 @@ public class UiTest extends BaseClass {
 
     @Test
     void testHandlingMultipleTabs() throws AWTException, InterruptedException {
+        WebDriver driver = getDriver();
         driver.get("https://www.javatpoint.com/selenium-tutorial");
         driver.manage().window().maximize();
         String currentWindowHandle = driver.getWindowHandle();
@@ -191,11 +193,13 @@ public class UiTest extends BaseClass {
 
     @Test
     void navigationTest() {
+        WebDriver driver = getDriver();
         driver.navigate().to("https://www.javatpoint.com/selenium-webdriver-navigation-commands");
     }
 
     @Test
     void implicitTestExample() throws InterruptedException {
+        WebDriver driver = getDriver();
         driver.get("http://www.google.com");
         //driver.manage().timeouts().implicitlyWait(30000, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.MINUTES);

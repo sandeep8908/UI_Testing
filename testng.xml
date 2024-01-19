@@ -1,6 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestSuite">
+<suite name="TestSuite" parallel="methods" thread-count="5">
     <test name="PracticeTest">
+
         <classes>
             <class name="testing.test.SignInPageTest"></class>
             <class name="testing.test.UiTest"></class>

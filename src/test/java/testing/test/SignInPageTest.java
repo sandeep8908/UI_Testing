@@ -1,5 +1,6 @@
 package testing.test;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import testing.BaseClass;
 import testing.page.HomePage;
@@ -11,6 +12,7 @@ public class SignInPageTest extends BaseClass {
 
     @Test
     public void signInTestWithValidCredentials() {
+        WebDriver driver = getDriver();
         HomePage homePage = new HomePage(driver);
 
         homePage.clickSignInButton();
@@ -22,7 +24,7 @@ public class SignInPageTest extends BaseClass {
 
     @Test
     public void testSignInWithInvalidPassword() {
-
+        WebDriver driver = getDriver();
         HomePage homePage = new HomePage(driver);
 
         homePage.clickSignInButton();

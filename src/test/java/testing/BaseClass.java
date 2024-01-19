@@ -5,19 +5,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
-    public WebDriver driver;
+
+    private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 
     @BeforeMethod
-    public void setUp() throws MalformedURLException {
-        System.out.println("Before Suit Running...");
+    public void setUp() {
+        System.out.println("Before Method Running...");
 
         String runMode = System.getProperty("env");
 
@@ -34,22 +35,28 @@ public class BaseClass {
             caps.setCapability("browserstack.key", "fGQN8biMZzdaCzgc34xg");
 
             // Initialize the driver with BrowserStack capabilities
-            driver = new RemoteWebDriver(new URL("https://hub.browserstack.com/wd/hub"), caps);
+            try {
+                driverThreadLocal.set(new RemoteWebDriver(new URL("https://hub.browserstack.com/wd/hub"), caps));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         } else {
-
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+            driverThreadLocal.set(new ChromeDriver());
+            driverThreadLocal.get().manage().window().maximize();
+            driverThreadLocal.get().manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
         }
     }
 
     @AfterMethod
     public void tearDown() {
-        System.out.println("After suit completed..");
-        if (driver != null) {
-           // driver.close();
-            driver.quit();
+        System.out.println("After Method completed..");
+        if (driverThreadLocal.get() != null) {
+            driverThreadLocal.get().quit();
         }
+    }
+
+    public static WebDriver getDriver() {
+        return driverThreadLocal.get();
     }
 }
