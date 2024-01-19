@@ -28,7 +28,7 @@ public class UploadAndDownloadTest extends BaseClass {
     public void downloadTest() throws InterruptedException {
         String downlaodDir = "C:\\Users\\ssb\\Downloads";
         driver.get("https://the-internet.herokuapp.com/download");
-        String fileName = "nature.jpg";
+        String fileName = "logo.jpg";
         WebElement downlaodLink = driver.findElement(By.linkText(fileName));
         downlaodLink.click();
 
@@ -48,20 +48,17 @@ public class UploadAndDownloadTest extends BaseClass {
         driver.findElement(By.cssSelector("input[type = 'text']")).sendKeys("abcdef");
     }
 
+
     @Test
     public void NestedIframeTest() {
         driver.get("https://demo.automationtesting.in/Frames.html");
 
         driver.findElement(By.linkText("Iframe with in an Iframe")).click();
-        int iframe = driver.findElements(By.tagName("iframe")).size();
-        System.out.println(iframe);
 
-        // Switch to the outer iframe
-        driver.switchTo().frame(0);
-
-        // Switch to the inner iframe
-       // WebElement outerIframe = driver.findElement(By.cssSelector("body > section > div > div > iframe"));
+        //Switch to the inner iframe
         driver.switchTo().frame(1);
+        // Switch to the inner iframe
+        driver.switchTo().frame(0);
 
         WebElement element = driver.findElement(By.xpath("/html/body/section/div/div/div/input"));
         element.sendKeys("fdsfd");

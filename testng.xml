@@ -1,9 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestSuite" parallel="methods">
-    <test name="ChromeTests">
+<suite name="TestSuite">
+    <test name="PracticeTest">
         <classes>
-            <class name="testing.test.SignInPageTest" />
-            <class name="testing.test.UiTest" />
+            <class name="testing.test.SignInPageTest"></class>
+            <class name="testing.test.UiTest"></class>
+            <class name="testing.test.UploadAndDownloadTest"></class>
         </classes>
     </test>
 </suite>

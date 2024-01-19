@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
@@ -36,13 +38,16 @@
             <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
             <version>2.2</version>
             <scope>test</scope>
-        </dependency><!-- https://mvnrepository.com/artifact/org.json/json -->
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -65,8 +70,9 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.11.0</version>
+            <version>4.12.1</version>
         </dependency>
+
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -76,17 +82,30 @@
         </dependency>
 
         <dependency>
-      <groupId>com.browserstack</groupId>
-      <artifactId>browserstack-java-sdk</artifactId>
-      <version>LATEST</version>
-      <scope>compile</scope>
-    </dependency>
+            <groupId>com.browserstack</groupId>
+            <artifactId>browserstack-java-sdk</artifactId>
+            <version>LATEST</version>
+            <scope>compile</scope>
+        </dependency>
 
         <dependency>
             <groupId>com.epam.reportportal</groupId>
             <artifactId>agent-java-testng</artifactId>
             <version>5.3.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>logger-java-log4j</artifactId>
+            <version>5.2.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>logger-java-okhttp3</artifactId>
+            <version>5.1.0</version>
         </dependency>
 
     </dependencies>
@@ -101,21 +120,10 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles><!--suppress UnresolvedMavenProperty -->
-                    <argLine>-javaagent:"${com.browserstack:browserstack-java-sdk:jar}"</argLine>
+                    <!--  <argLine>-javaagent:"${com.browserstack:browserstack-java-sdk:jar}"</argLine>-->
                 </configuration>
             </plugin>
-            <plugin>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.3.0</version>
-        <executions>
-          <execution>
-            <id>getClasspathFilenames</id>
-            <goals>
-              <goal>properties</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+
         </plugins>
     </build>
 

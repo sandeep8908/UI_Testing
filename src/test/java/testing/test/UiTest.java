@@ -15,8 +15,6 @@ import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 
 import static org.testng.Assert.*;
 
@@ -36,6 +34,7 @@ public class UiTest extends BaseClass {
 
         assertEquals(pass.getAttribute("value"), "Rythum30@", "Password field value is not as expected");
         WebElement login = driver.findElement(By.name("login"));
+        //driver.switchTo().alert().accept();
         login.click();
         System.out.println("Login done !");
     }
@@ -44,8 +43,9 @@ public class UiTest extends BaseClass {
     void signUpTest() throws InterruptedException {
         driver.get(baseUrl);
         WebElement createAccount = driver.findElement(By.partialLinkText("Create new account"));
+        //driver.switchTo().alert().accept();
         createAccount.click();
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstname")));
 
         WebElement firstname = driver.findElement(By.name("firstname"));
@@ -200,7 +200,7 @@ public class UiTest extends BaseClass {
         //driver.manage().timeouts().implicitlyWait(30000, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.MINUTES);
         //Thread.sleep(30000);
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(1000));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APjFqb")));
         //WebElement element = driver.findElement(By.id("APjFqb"));
 
