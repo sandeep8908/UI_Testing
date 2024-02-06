@@ -26,7 +26,9 @@ public class UploadPage {
     }
 
     public void uploadFile() {
-        uploadFile.sendKeys("C:\\Users\\ssb\\Pictures\\Saved Pictures\\bgRadio.png");
+        String uploadFilePath = "C:\\Users\\ssb\\Downloads\\UI_Testing\\src\\main\\resources\\static.images\\";
+
+        uploadFile.sendKeys(uploadFilePath + "bgStrategy.png");
     }
 
     public void clickOnTermsAndCondition() {

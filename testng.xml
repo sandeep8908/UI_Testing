@@ -1,5 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestSuite" parallel="methods" thread-count="5">
+<suite name="TestSuite" parallel="methods" thread-count="1">
+
     <test name="PracticeTest">
 
         <classes>
@@ -8,4 +9,25 @@
             <class name="testing.test.UploadAndDownloadTest"></class>
         </classes>
     </test>
+
+
+
+    <!--<test name="Test1">
+
+        <classes>
+            <class name="testing.test.SignInPageTest"></class>
+        </classes>
+    </test>
+    <test name="Test2">
+
+        <classes>
+            <class name="testing.test.UiTest"></class>
+        </classes>
+    </test>
+    <test name="Test3">
+
+        <classes>
+            <class name="testing.test.UploadAndDownloadTest"></class>
+        </classes>
+    </test>-->
 </suite>

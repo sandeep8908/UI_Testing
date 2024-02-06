@@ -12,27 +12,37 @@ public class SignInPageTest extends BaseClass {
 
     @Test
     public void signInTestWithValidCredentials() {
-        WebDriver driver = getDriver();
-        HomePage homePage = new HomePage(driver);
+        try {
 
-        homePage.clickSignInButton();
-        SignInPage signInPage = new SignInPage(driver);
+            WebDriver driver = getDriver();
+            HomePage homePage = new HomePage(driver);
 
-        assertTrue(signInPage.isPageOpened());
-        signInPage.signIn("sandeep.birla@liseinfotech.com", "Sandeep@6485");
+            homePage.clickSignInButton();
+            SignInPage signInPage = new SignInPage(driver);
+
+            assertTrue(signInPage.isPageOpened());
+            signInPage.signIn("sandeep.birla@liseinfotech.com", "Sandeep@6485");
+        } finally {
+            tearDown();
+        }
     }
 
     @Test
     public void testSignInWithInvalidPassword() {
-        WebDriver driver = getDriver();
-        HomePage homePage = new HomePage(driver);
+        try {
+            WebDriver driver = getDriver();
+            HomePage homePage = new HomePage(driver);
 
-        homePage.clickSignInButton();
-        SignInPage signInPage = new SignInPage(driver);
+            homePage.clickSignInButton();
+            SignInPage signInPage = new SignInPage(driver);
 
-        assertTrue(signInPage.isPageOpened());
-        signInPage.signIn("sandeep.birla@liseinfotech.com", "Sandeep@");
+            assertTrue(signInPage.isPageOpened());
+            signInPage.signIn("sandeep.birla@liseinfotech.com", "Sandeep@");
 
-        assertTrue(signInPage.errorMessageIsVisible());
+            assertTrue(signInPage.errorMessageIsVisible());
+
+        } finally {
+            tearDown();
+        }
     }
 }

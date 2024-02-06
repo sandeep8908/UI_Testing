@@ -1,55 +1,69 @@
 package testing.test;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import testing.BaseClass;
 import testing.page.UploadPage;
 
 import java.io.File;
-
-import static org.testng.Assert.assertTrue;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class UploadAndDownloadTest extends BaseClass {
     @Test
     public void uploadTest() {
-        WebDriver driver = getDriver();
-        UploadPage uploadPage = new UploadPage(driver);
+        try {
 
-        uploadPage.uploadFile();
+            WebDriver driver = getDriver();
+            UploadPage uploadPage = new UploadPage(driver);
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            uploadPage.uploadFile();
 
-        uploadPage.clickOnTermsAndCondition();
+            uploadPage.clickOnTermsAndCondition();
 
-        uploadPage.clickOnSubmitButton();
-
+            uploadPage.clickOnSubmitButton();
+        } finally {
+            tearDown();
+        }
     }
 
     @Test
-    public void downloadTest() throws InterruptedException {
-        WebDriver driver = getDriver();
-        String downlaodDir = "C:\\Users\\ssb\\Downloads";
-        driver.get("https://the-internet.herokuapp.com/download");
-        String fileName = "IMG_8955.JPG";
-        WebElement downlaodLink = driver.findElement(By.linkText(fileName));
-        downlaodLink.click();
+    public void downloadTest() {
+        try {
+            WebDriver driver = getDriver();
+            String downlaodDir = "C:\\Users\\ssb\\Downloads";
+            driver.get("https://the-internet.herokuapp.com/download");
+            String fileName = "image.jpg";
+            //Thread.sleep(3000);
+            WebElement downlaodLink = driver.findElement(By.linkText(fileName));
+            downlaodLink.click();
 
-        Thread.sleep(5000);
+            String filePath = downlaodDir + File.separator + fileName;
+            File downloadFile = new File(filePath);
 
-        String filePath = downlaodDir + File.separator + fileName;
-        File downloadFile = new File(filePath);
-
-        //assertTrue(downloadFile.exists(), "File Download Successfully");
+            //assertTrue(downloadFile.exists(), "File Download Successfully");
+        } finally {
+            tearDown();
+        }
     }
 
     @Test
     public void iFrameClickTest() {
-        WebDriver driver = getDriver();
-        driver.get("https://demo.automationtesting.in/Frames.html");
-        driver.switchTo().frame(0);
+        try {
 
-        driver.findElement(By.cssSelector("input[type = 'text']")).sendKeys("abcdef");
+            WebDriver driver = getDriver();
+            driver.get("https://demo.automationtesting.in/Frames.html");
+            driver.switchTo().frame(0);
+            WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(60));
+            driverWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type = 'text']")));
+            driver.findElement(By.cssSelector("input[type = 'text']")).sendKeys("abcdef");
+        } finally {
+            tearDown();
+        }
     }
 
 
@@ -69,5 +83,6 @@ public class UploadAndDownloadTest extends BaseClass {
         element.sendKeys("fdsfd");
 
         driver.switchTo().defaultContent();
+        tearDown();
     }
 }

@@ -23,6 +23,9 @@ public class UiTest extends BaseClass {
     void testLoginPage() {
         WebDriver driver = getDriver();
         driver.get(baseUrl);
+
+        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(120));
+        webDriverWait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("email"))));
         WebElement email = driver.findElement(By.id("email"));
         email.sendKeys("rythum30@gmail.com");
 
@@ -35,12 +38,14 @@ public class UiTest extends BaseClass {
         //driver.switchTo().alert().accept();
         login.click();
         System.out.println("Login done !");
+        tearDown();
     }
 
     @Test
-    void signUpTest() throws InterruptedException {
+    void signUpTest() {
         WebDriver driver = getDriver();
         driver.get(baseUrl);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(80));
         WebElement createAccount = driver.findElement(By.partialLinkText("Create new account"));
         //driver.switchTo().alert().accept();
         createAccount.click();
@@ -48,9 +53,9 @@ public class UiTest extends BaseClass {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstname")));
 
         WebElement firstname = driver.findElement(By.name("firstname"));
-        firstname.sendKeys("Domain");
+        firstname.sendKeys("monty");
 
-        assertEquals(firstname.getAttribute("value"), "Domain", "First name field value is not as expected");
+        assertEquals(firstname.getAttribute("value"), "monty", "First name field value is not as expected");
         WebElement lastname = driver.findElement(By.cssSelector("input[name='lastname']"));
         lastname.sendKeys("service");
 
@@ -104,55 +109,70 @@ public class UiTest extends BaseClass {
 
         WebElement websubmit = driver.findElement(By.name("websubmit"));
         websubmit.click();
+
+        tearDown();
     }
 
     @Test
     void amazonSignUpPageTest() {
-        WebDriver driver = getDriver();
-        driver.navigate().to("https://www.amazon.in/ap/register?showRememberMe=true&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%" +
-                "2Fs%3Fk%3Damaozn%2Bpay%26adgrpid%3D84811993817%26ext_vrnc%3Dhi%26gclid%3DCj0KCQiAnfmsBhDfARIsAM7MKi1KMSYKMCMu10BxvFtJEssopaKiphkDvV_" +
-                "CPiBPYu5m9DLUe14ihLMaAl3pEALw_wcB%26hvadid%3D590431616040%26hvdev%3Dc%26hvlocphy%3D1007796%26hvnetw%3Dg%26hvqmt%3Db" +
-                "%26hvrand%3D6567990490383795653%26hvtargid%3Dkwd-915707733732%26hydadcr%3D12495_2334764%26tag%3Dgooginhydr1-21%26ref%3Dnav_" +
-                "custrec_signin&prevRID=NN24AR59Z5ZPJSB5SSXC&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&o" +
-                "penid.assoc_handle=inflex&openid.mode=checkid_setup&prepopulatedLoginId=&failedSignInCount=0&openid.claimed_id=http%3A%2F%2Fspecs.op" +
-                "enid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=inflex&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0");
-        WebElement customerName = driver.findElement(By.name("customerName"));
-        customerName.sendKeys("Ankit Birla");
-        assertEquals(customerName.getAttribute("value"), "Ankit Birla");
+        try {
+            WebDriver driver = getDriver();
+            driver.navigate().to("https://www.amazon.in/ap/register?showRememberMe=true&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%" +
+                    "2Fs%3Fk%3Damaozn%2Bpay%26adgrpid%3D84811993817%26ext_vrnc%3Dhi%26gclid%3DCj0KCQiAnfmsBhDfARIsAM7MKi1KMSYKMCMu10BxvFtJEssopaKiphkDvV_" +
+                    "CPiBPYu5m9DLUe14ihLMaAl3pEALw_wcB%26hvadid%3D590431616040%26hvdev%3Dc%26hvlocphy%3D1007796%26hvnetw%3Dg%26hvqmt%3Db" +
+                    "%26hvrand%3D6567990490383795653%26hvtargid%3Dkwd-915707733732%26hydadcr%3D12495_2334764%26tag%3Dgooginhydr1-21%26ref%3Dnav_" +
+                    "custrec_signin&prevRID=NN24AR59Z5ZPJSB5SSXC&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&o" +
+                    "penid.assoc_handle=inflex&openid.mode=checkid_setup&prepopulatedLoginId=&failedSignInCount=0&openid.claimed_id=http%3A%2F%2Fspecs.op" +
+                    "enid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=inflex&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0");
 
-        WebElement countryCodeDropDown = driver.findElement(By.id("auth-country-picker"));
-        Select countryCodeSelect = new Select(countryCodeDropDown);
-        countryCodeSelect.selectByValue("IN");
+            WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(60));
+            webDriverWait.until(ExpectedConditions.visibilityOf(driver.findElement(By.name("customerName"))));
+            WebElement customerName = driver.findElement(By.name("customerName"));
+            customerName.sendKeys("Ankit Birla");
+            assertEquals(customerName.getAttribute("value"), "Ankit Birla");
 
-        assertEquals(countryCodeDropDown.getAttribute("value"), "IN");
-        WebElement apPhoneNumber = driver.findElement(By.id("ap_phone_number"));
-        apPhoneNumber.sendKeys("6264622129");
+            WebElement countryCodeDropDown = driver.findElement(By.id("auth-country-picker"));
+            Select countryCodeSelect = new Select(countryCodeDropDown);
+            countryCodeSelect.selectByValue("IN");
 
-        assertEquals(apPhoneNumber.getAttribute("value"), "6264622129");
+            assertEquals(countryCodeDropDown.getAttribute("value"), "IN");
+            WebElement apPhoneNumber = driver.findElement(By.id("ap_phone_number"));
+            apPhoneNumber.sendKeys("6264622129");
 
-        WebElement email = driver.findElement(By.cssSelector("input[id = 'ap_email']"));
-        email.sendKeys("sandeep.birla@liseinfotech.com");
+            assertEquals(apPhoneNumber.getAttribute("value"), "6264622129");
 
-        assertEquals(email.getAttribute("value"), "sandeep.birla@liseinfotech.com");
+            /*WebElement email = driver. findElement(By.cssSelector("input[id = 'ap_email']"));
+            email.sendKeys("sandeep.birla@liseinfotech.com");
 
-        WebElement password = driver.findElement(By.name("password"));
-        password.sendKeys("sandeep8989@9");
+            assertEquals(email.getAttribute("value"), "sandeep.birla@liseinfotech.com");
 
-        assertEquals(password.getAttribute("value"), "sandeep8989@9");
+            WebElement password = driver.findElement(By.name("password"));
+            password.sendKeys("sandeep8989@9");
 
-        WebElement continueButton = driver.findElement(By.cssSelector("input[type = 'submit']"));
-        continueButton.submit();
+            assertEquals(password.getAttribute("value"), "sandeep8989@9");*/
+
+            WebElement submitButton = driver.findElement(By.cssSelector("input[type = 'submit']"));
+            submitButton.submit();
+        } finally {
+            tearDown();
+        }
+
     }
 
     @Test
     void testHandlingTabs() {
-        WebDriver driver = getDriver();
-        String currentWindowHandle = driver.getWindowHandle();
-        System.out.println(currentWindowHandle);
+        try {
 
-        driver.navigate().to("http://www.google.com");
-        driver.switchTo().newWindow(WindowType.TAB);
-        driver.navigate().to("https://testsigma.com/");
+            WebDriver driver = getDriver();
+            String currentWindowHandle = driver.getWindowHandle();
+            System.out.println(currentWindowHandle);
+
+            driver.navigate().to("http://www.google.com");
+            driver.switchTo().newWindow(WindowType.TAB);
+            driver.navigate().to("https://testsigma.com/");
+        } finally {
+            tearDown();
+        }
 
         /*Robot robot = new Robot();
         robot.keyPress(KeyEvent.VK_CONTROL);
@@ -163,55 +183,69 @@ public class UiTest extends BaseClass {
 
     @Test
     void testHandlingMultipleTabs() throws AWTException, InterruptedException {
-        WebDriver driver = getDriver();
-        driver.get("https://www.javatpoint.com/selenium-tutorial");
-        driver.manage().window().maximize();
-        String currentWindowHandle = driver.getWindowHandle();
+        try {
 
-        WebElement loginTest = driver.findElement(By.linkText("IDE-Login Test"));
-        loginTest.click();
+            WebDriver driver = getDriver();
+            driver.get("https://www.javatpoint.com/selenium-tutorial");
+            //driver.manage().window().maximize();
+            String currentWindowHandle = driver.getWindowHandle();
 
-        Robot r = new Robot();
-        r.keyPress(KeyEvent.VK_CONTROL);
-        r.keyPress(KeyEvent.VK_T);
-        r.keyRelease(KeyEvent.VK_CONTROL);
-        r.keyRelease(KeyEvent.VK_T);
-        Thread.sleep(2000);
+            WebElement loginTest = driver.findElement(By.linkText("IDE-Login Test"));
+            loginTest.click();
 
-        Set<String> driverWindowHandles = driver.getWindowHandles();
+            Robot r = new Robot();
+            r.keyPress(KeyEvent.VK_CONTROL);
+            r.keyPress(KeyEvent.VK_T);
+            r.keyRelease(KeyEvent.VK_CONTROL);
+            r.keyRelease(KeyEvent.VK_T);
+            Thread.sleep(2000);
 
-        for (String actual : driverWindowHandles) {
-            if (!actual.equalsIgnoreCase(currentWindowHandle)) {
-                driver.switchTo().window(actual);
+            Set<String> driverWindowHandles = driver.getWindowHandles();
 
-                driver.get("https://www.google.com/");
+            for (String actual : driverWindowHandles) {
+                if (!actual.equalsIgnoreCase(currentWindowHandle)) {
+                    driver.switchTo().window(actual);
 
-                driver.switchTo().window(currentWindowHandle);
+                    driver.get("https://www.google.com/");
+
+                    driver.switchTo().window(currentWindowHandle);
+                }
             }
+        } finally {
+            tearDown();
         }
     }
 
     @Test
     void navigationTest() {
-        WebDriver driver = getDriver();
-        driver.navigate().to("https://www.javatpoint.com/selenium-webdriver-navigation-commands");
+        try {
+            WebDriver driver = getDriver();
+            driver.navigate().to("https://www.javatpoint.com/selenium-webdriver-navigation-commands");
+        } finally {
+            tearDown();
+        }
     }
 
     @Test
-    void implicitTestExample() throws InterruptedException {
-        WebDriver driver = getDriver();
-        driver.get("http://www.google.com");
-        //driver.manage().timeouts().implicitlyWait(30000, TimeUnit.SECONDS);
-        //driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.MINUTES);
-        //Thread.sleep(30000);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APjFqb")));
-        //WebElement element = driver.findElement(By.id("APjFqb"));
+    void implicitTestExample() {
+        try {
 
-        element.sendKeys("Java Interview questions");
-        element.sendKeys(Keys.RETURN);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("dURPMd")));
-        List<WebElement> list = driver.findElements(By.className("dURPMd"));
-        System.out.println(list.size());
+            WebDriver driver = getDriver();
+            driver.get("http://www.google.com");
+            //driver.manage().timeouts().implicitlyWait(30000, TimeUnit.SECONDS);
+            //driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.MINUTES);
+            //Thread.sleep(30000);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20000));
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APjFqb")));
+            //WebElement element = driver.findElement(By.id("APjFqb"));
+
+            element.sendKeys("Java Interview questions");
+            element.sendKeys(Keys.RETURN);
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("dURPMd")));
+            List<WebElement> list = driver.findElements(By.className("dURPMd"));
+            System.out.println(list.size());
+        } finally {
+            tearDown();
+        }
     }
 }

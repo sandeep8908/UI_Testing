@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class HomePage extends BasePage{
     private static String PAGE_URL = "https://github.com/";
 
     private WebDriver driver;
@@ -17,6 +17,7 @@ public class HomePage {
     private WebElement loggedInUser;
 
     public HomePage (WebDriver driver){
+        super(driver);
         this.driver = driver;
         driver.get(PAGE_URL);
 
@@ -24,6 +25,7 @@ public class HomePage {
     }
 
     public void clickSignInButton(){
+        waitForElement(signInButton);
         signInButton.click();
     }
 

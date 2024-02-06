@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignInPage {
+public class SignInPage extends BasePage {
+
+
     private WebDriver driver;
     @FindBy(xpath = "//*[@id=\"login\"]/div[1]/h1")
     private WebElement heading;
@@ -24,6 +26,7 @@ public class SignInPage {
 
 
     public SignInPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
 
         PageFactory.initElements(driver, this);
@@ -48,6 +51,7 @@ public class SignInPage {
     }
 
     public boolean  isPageOpened() {
+
         return heading.getText().contains("Sign in to GitHub");
     }
 
@@ -56,6 +60,7 @@ public class SignInPage {
     }
 
     public boolean errorMessageIsVisible() {
+        waitForElement(signInError);
         return signInError.isDisplayed();
     }
 }
