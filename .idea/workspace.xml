@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d18db684-3194-46d8-a3af-879ecf34fc86" name="Changes" comment="configure parallel test through testng.xml">
-      <change afterPath="$PROJECT_DIR$/src/test/java/testing/page/RadioButtonPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/testing/test/RadioBtnPage.java" afterDir="false" />
+    <list default="true" id="d18db684-3194-46d8-a3af-879ecf34fc86" name="Changes" comment="create BasePage for wait for page.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/testing/page/DialogBoxPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testing/page/TableHandlingPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testing/test/DialogBoxTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testing/test/TableHandlingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/BaseClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testing/page/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/page/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testing/page/SignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/page/SignInPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testing/page/UploadPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/page/UploadPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/SignInPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/SignInPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/RadioBtnPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/RadioBtnTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/UiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/UiTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testing/test/UploadAndDownloadTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
@@ -72,18 +70,8 @@
       <recent name="testing" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/ssb/Downloads/UI_Testing/testng.xml">
-    <configuration name="C:/Users/ssb/Downloads/UI_Testing/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UI_Testing" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SignInPageTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.TableHandlingTest">
+    <configuration name="DialogBoxTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="UI_Testing" />
       <extension name="coverage">
         <pattern>
@@ -92,8 +80,61 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testing.test" />
-      <option name="MAIN_CLASS_NAME" value="testing.test.SignInPageTest" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.DialogBoxTest" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DialogBoxTest.placeOrder" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UI_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testing.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.DialogBoxTest" />
+      <option name="METHOD_NAME" value="placeOrder" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableHandlingTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UI_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testing.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.TableHandlingTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableHandlingTest.tableHandling" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="UI_Testing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testing.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testing.test" />
+      <option name="MAIN_CLASS_NAME" value="testing.test.TableHandlingTest" />
+      <option name="METHOD_NAME" value="tableHandling" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -118,49 +159,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UiTest.testLoginPage" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UI_Testing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testing.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testing.test" />
-      <option name="MAIN_CLASS_NAME" value="testing.test.UiTest" />
-      <option name="METHOD_NAME" value="testLoginPage" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UploadAndDownloadTest.downloadTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="UI_Testing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testing.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testing.test" />
-      <option name="MAIN_CLASS_NAME" value="testing.test.UploadAndDownloadTest" />
-      <option name="METHOD_NAME" value="downloadTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/ssb/Downloads/UI_Testing/testng.xml" />
-        <item itemvalue="TestNG.UiTest.testLoginPage" />
-        <item itemvalue="TestNG.UploadAndDownloadTest.downloadTest" />
+        <item itemvalue="TestNG.TableHandlingTest" />
+        <item itemvalue="TestNG.TableHandlingTest.tableHandling" />
+        <item itemvalue="TestNG.DialogBoxTest" />
+        <item itemvalue="TestNG.DialogBoxTest.placeOrder" />
         <item itemvalue="TestNG.UiTest.amazonSignUpPageTest" />
-        <item itemvalue="TestNG.SignInPageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +220,21 @@
       <option name="project" value="LOCAL" />
       <updated>1705698182361</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="create RadioBtn through multiple attribute and getDriver method ,tearDown method.">
+      <created>1707236476479</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707236476479</updated>
+    </task>
+    <task id="LOCAL-00008" summary="create BasePage for wait for page.">
+      <created>1707236687305</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707236687305</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,6 +244,8 @@
     <MESSAGE value="configure browserstack.yml file &amp; adding dependencies in pom.xml of browserstack" />
     <MESSAGE value="configure report portal to generate report of test." />
     <MESSAGE value="configure parallel test through testng.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="configure parallel test through testng.xml" />
+    <MESSAGE value="create RadioBtn through multiple attribute and getDriver method ,tearDown method." />
+    <MESSAGE value="create BasePage for wait for page." />
+    <option name="LAST_COMMIT_MESSAGE" value="create BasePage for wait for page." />
   </component>
 </project>

@@ -7,27 +7,10 @@
             <class name="testing.test.SignInPageTest"></class>
             <class name="testing.test.UiTest"></class>
             <class name="testing.test.UploadAndDownloadTest"></class>
+            <class name="testing.test.DialogBoxTest"></class>
+            <class name="testing.test.RadioBtnTest"></class>
+            <class name="testing.test.TableHandlingTest"></class>
         </classes>
     </test>
 
-
-
-    <!--<test name="Test1">
-
-        <classes>
-            <class name="testing.test.SignInPageTest"></class>
-        </classes>
-    </test>
-    <test name="Test2">
-
-        <classes>
-            <class name="testing.test.UiTest"></class>
-        </classes>
-    </test>
-    <test name="Test3">
-
-        <classes>
-            <class name="testing.test.UploadAndDownloadTest"></class>
-        </classes>
-    </test>-->
 </suite>

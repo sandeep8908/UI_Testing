@@ -45,7 +45,7 @@ public class UiTest extends BaseClass {
     void signUpTest() {
         WebDriver driver = getDriver();
         driver.get(baseUrl);
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(80));
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(80));
         WebElement createAccount = driver.findElement(By.partialLinkText("Create new account"));
         //driver.switchTo().alert().accept();
         createAccount.click();
@@ -94,8 +94,7 @@ public class UiTest extends BaseClass {
 
         assertEquals(yearDropDown.getAttribute("value"), "2007", "Year field value is not as expected");
 
-        WebElement radioGender
-                = driver.findElement(By.cssSelector("input[value='-1']"));
+        WebElement radioGender = driver.findElement(By.cssSelector("input[value='-1']"));
         radioGender.click();
 
         if (radioGender.getAccessibleName().equals("Custom")) {
@@ -117,13 +116,12 @@ public class UiTest extends BaseClass {
     void amazonSignUpPageTest() {
         try {
             WebDriver driver = getDriver();
-            driver.navigate().to("https://www.amazon.in/ap/register?showRememberMe=true&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%" +
-                    "2Fs%3Fk%3Damaozn%2Bpay%26adgrpid%3D84811993817%26ext_vrnc%3Dhi%26gclid%3DCj0KCQiAnfmsBhDfARIsAM7MKi1KMSYKMCMu10BxvFtJEssopaKiphkDvV_" +
-                    "CPiBPYu5m9DLUe14ihLMaAl3pEALw_wcB%26hvadid%3D590431616040%26hvdev%3Dc%26hvlocphy%3D1007796%26hvnetw%3Dg%26hvqmt%3Db" +
-                    "%26hvrand%3D6567990490383795653%26hvtargid%3Dkwd-915707733732%26hydadcr%3D12495_2334764%26tag%3Dgooginhydr1-21%26ref%3Dnav_" +
-                    "custrec_signin&prevRID=NN24AR59Z5ZPJSB5SSXC&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&o" +
-                    "penid.assoc_handle=inflex&openid.mode=checkid_setup&prepopulatedLoginId=&failedSignInCount=0&openid.claimed_id=http%3A%2F%2Fspecs.op" +
-                    "enid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=inflex&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0");
+            String PAGE_URL = "https://www.amazon.in/";
+
+            driver.navigate().to(PAGE_URL);
+            driver.findElement(By.id("nav-link-accountList")).click();
+
+            driver.findElement(By.linkText("Create your Amazon account")).click();
 
             WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(60));
             webDriverWait.until(ExpectedConditions.visibilityOf(driver.findElement(By.name("customerName"))));
@@ -144,19 +142,18 @@ public class UiTest extends BaseClass {
             /*WebElement email = driver. findElement(By.cssSelector("input[id = 'ap_email']"));
             email.sendKeys("sandeep.birla@liseinfotech.com");
 
-            assertEquals(email.getAttribute("value"), "sandeep.birla@liseinfotech.com");
+            assertEquals(email.getAttribute("value"), "sandeep.birla@liseinfotech.com");*/
 
             WebElement password = driver.findElement(By.name("password"));
             password.sendKeys("sandeep8989@9");
 
-            assertEquals(password.getAttribute("value"), "sandeep8989@9");*/
+            assertEquals(password.getAttribute("value"), "sandeep8989@9");
 
             WebElement submitButton = driver.findElement(By.cssSelector("input[type = 'submit']"));
             submitButton.submit();
         } finally {
             tearDown();
         }
-
     }
 
     @Test

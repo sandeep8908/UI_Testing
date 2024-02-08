@@ -6,7 +6,7 @@ import testing.BaseClass;
 import testing.page.RadioButtonPage;
 
 @Test
-public class RadioBtnPage extends BaseClass {
+public class RadioBtnTest extends BaseClass {
 
     @Test
     public void clickOnRadioBtn() {

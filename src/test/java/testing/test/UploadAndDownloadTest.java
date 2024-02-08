@@ -37,7 +37,7 @@ public class UploadAndDownloadTest extends BaseClass {
             WebDriver driver = getDriver();
             String downlaodDir = "C:\\Users\\ssb\\Downloads";
             driver.get("https://the-internet.herokuapp.com/download");
-            String fileName = "image.jpg";
+            String fileName = "download.jpg";
             //Thread.sleep(3000);
             WebElement downlaodLink = driver.findElement(By.linkText(fileName));
             downlaodLink.click();
